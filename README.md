@@ -6,7 +6,7 @@ This terraform module creates one or more event bridge schedulers that send a me
 
 ```hcl
 module "event-bridge-sns-scheduler" {
-  source = "../"
+  source = "github.com/inaciogu/event-bridge-sns-scheduler"
   schedulers = [ 
     {
       name = "test-scheduler"
