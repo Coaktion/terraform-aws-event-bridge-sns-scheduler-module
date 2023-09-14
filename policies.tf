@@ -1,7 +1,7 @@
 resource "aws_iam_role" "sns_scheduler_role" {
   for_each = local.subscriptions
 
-  name = "sns-scheduler-role-${each.value.topic_name}"
+  name = "sns-scheduler-role-${each.key}"
   
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -15,6 +15,8 @@ resource "aws_iam_role" "sns_scheduler_role" {
       }
     ]
   })
+
+  depends_on = [ module.pubsub ]
 }
 
 resource "aws_iam_policy" "sns_publish_policy" {
