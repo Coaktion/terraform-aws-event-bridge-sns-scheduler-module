@@ -8,7 +8,11 @@ locals {
   queues = [
     for scheduler in var.schedulers : {
       name = scheduler.queue_name
-      topics_to_subscribe = local.topics
+      topics_to_subscribe = [
+        {
+          name = scheduler.topic_name
+        }
+      ]
     }
   ]
 
