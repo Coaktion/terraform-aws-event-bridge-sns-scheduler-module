@@ -17,3 +17,7 @@ output "iam" {
 output "local_subscriptions" {
   value = local.subscriptions
 }
+
+output "schedulers" {
+  value = local.pubsub_schedulers
+}
