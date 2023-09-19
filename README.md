@@ -14,6 +14,7 @@ module "event-bridge-sns-scheduler" {
       description = "This is a test scheduler"
       schedule_expression = "cron(10 17 * * ? *)"
       maximum_window_in_minutes = 60
+      create_pubsub = true
       mode = "FLEXIBLE"
       topic_name = "example_topic"
       queue_name = "example_queue"
