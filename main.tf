@@ -1,10 +1,4 @@
 locals {
-  topics = [
-    for scheduler in var.schedulers : {
-      name = scheduler.topic_name
-    } if scheduler.create_pubsub == true
-  ]
-
   queues = [
     for scheduler in var.schedulers : {
       name = scheduler.queue_name
@@ -38,9 +32,8 @@ locals {
 }
 
 module "pubsub" {
-  source = "github.com/paulo-tinoco/terraform-sns-topic-subscription"
+  source = "github.com/Coaktion/terraform-aws-pubsub-module"
   queues = local.queues
-  topics = local.topics
 
   fifo = false
 
