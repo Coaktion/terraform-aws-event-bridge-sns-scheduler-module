@@ -7,7 +7,7 @@ It has a integration with a AWS pubsub module that creates a SNS topic, a SQS qu
 
 ```hcl
 module "event-bridge-sns-scheduler" {
-  source = "github.com/inaciogu/event-bridge-sns-scheduler"
+  source = "github.com/Coaktion/terraform-aws-event-bridge-sns-scheduler-module"
   schedulers = [ 
     {
       name = "test-scheduler"

@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 module "scheduler" {
-  source = "../"
+  source = "../" # "github.com/Coaktion/terraform-aws-event-bridge-sns-scheduler-module"
   schedulers = [
     {
       name                = "test-scheduler"
