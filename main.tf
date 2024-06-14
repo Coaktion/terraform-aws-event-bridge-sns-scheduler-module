@@ -4,7 +4,8 @@ locals {
       name = scheduler.queue_name
       topics_to_subscribe = [
         {
-          name = scheduler.topic_name
+          name         = scheduler.topic_name
+          create_topic = true
         }
       ]
     } if scheduler.create_pubsub == true
